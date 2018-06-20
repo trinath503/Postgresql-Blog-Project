@@ -40,10 +40,21 @@
     </header>
 
     <main role="main">
+      <div class="container">
+        <h1 class="text-center pt-5">Welcome to blog</h1>
+        <br>
+        <h2>Latest Blog's</h2>
+        <br>
+        {% for blog in blogs.all %}
+          <a href="#"><h3>{{ blog.title }}</h3></a>
+          {{blog.pub_date_pretty }}
+          <br>
+          <img class="img-fluid" src="{{ blog.image.url }}" alt="{{ blogs.title }}" />
+          <br>
+          <p>{{ blog.summary}}</p>
 
-      <h1 class="text-center pt-5">Welcome to blog</h1>
-      <br>
-
+        {% endfor %}
+    </div>
     </main>
 
     <footer class="text-muted">
